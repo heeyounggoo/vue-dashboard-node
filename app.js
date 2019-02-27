@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT
 const bodyParser = require('body-parser')
 const cors = require('cors')()
 const router = require('./router')
@@ -23,6 +24,8 @@ app.use((err, req, res, next) => {
   res.json({ error: err.message || 'internal server error' })
 })
 
-app.listen(3000, () => {
-  console.log("3000port 대기중!")
-});
+// app.listen(3000, () => {
+//   console.log("3000port 대기중!")
+// });
+
+app.listen(PORT)
