@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT
 const bodyParser = require('body-parser')
 const cors = require('cors')()
 const router = require('./router')
@@ -28,4 +27,7 @@ app.use((err, req, res, next) => {
 //   console.log("3000port 대기중!")
 // });
 
-app.listen(PORT)
+let port = process.env.PORT || 3000; //*
+app.listen(port, function(){
+  console.log('Server On!');
+});
