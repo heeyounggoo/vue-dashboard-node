@@ -32,8 +32,8 @@ router.post('/register', upload.single('image'), (req, res) => {
   // console.log(req.body.form)
   // console.log('req = ', req)
 
-  let oriImgName = req.file.originalname
-  let phyImgName = req.file.filename
+  let oriImgName = ''
+  let phyImgName = ''
 
   if(req.file) {
     oriImgName = req.file.originalname
